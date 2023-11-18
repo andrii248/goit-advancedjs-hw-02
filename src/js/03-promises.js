@@ -17,19 +17,15 @@ function onSubmitClick(evt) {
     createPromise(position, delay)
       .then(({ position, delay }) => {
         iziToast.show({
-          // title: '',
           message: '✅ Fulfilled promise ${position} in ${delay}ms',
           color: 'green', // blue, red, green, yellow
         });
-        // Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
       })
       .catch(({ position, delay }) => {
         iziToast.show({
-          // title: '',
           message: '❌ Rejected promise ${position} in ${delay}ms',
           color: 'green', // blue, red, green, yellow
         });
-        // Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
       });
 
     position += 1;
