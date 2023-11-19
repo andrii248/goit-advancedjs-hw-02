@@ -66,6 +66,7 @@ const timer = {
   stop() {
     clearInterval(intervalId);
     isActiveCountDown = false;
+    elements.datePicker.removeAttribute('disabled');
   },
 };
 
@@ -74,6 +75,7 @@ flatpickr(elements.datePicker, options);
 function handleStartBtn() {
   timer.start();
   elements.startBtn.setAttribute('disabled', 'true');
+  elements.datePicker.setAttribute('disabled', 'true');
 }
 
 function convertMs(ms) {
